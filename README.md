@@ -15,7 +15,7 @@ These potential files have been currently tested upto the LAMMPS Mar 2018 packag
 
 References:
 
-For pure silica glass: Sundararaman Siddharth, Liping Huang, Simona Ispas, and Walter Kob. "New optimization scheme to obtain interaction potentials for oxide glasses." The Journal of Chemical Physics 148, no. 19 (2018): 194504.
-For Alkali and Alkaline-earth silicate glasses: Sundararaman Siddharth, Liping Huang, Simona Ispas, and Walter Kob. "New interaction potentials for alkali and alkaline-earth aluminosilicate glasses." The Journal of chemical physics 150, no. 15 (2019): 154505.
-For Alkali borate glasses: Sundararaman Siddharth, Liping Huang, Simona Ispas, and Walter Kob. "New interaction potentials for borate glasses with mixed network formers." The Journal of chemical physics 152, no. 10 (2020): 104501.
-For Alkaline-earth silicate and borate glasses: Yueh-Ting Shih, Sundararaman Siddharth, Simona Ispas, and Liping Huang. "New interaction potentials for alkaline earth silicate and borate glasses." Journal of non-crystalline solids (Under review).
+1. For pure silica glass: Sundararaman Siddharth, Liping Huang, Simona Ispas, and Walter Kob. "New optimization scheme to obtain interaction potentials for oxide glasses." The Journal of Chemical Physics 148, no. 19 (2018): 194504.
+2. For Alkali and Alkaline-earth silicate glasses: Sundararaman Siddharth, Liping Huang, Simona Ispas, and Walter Kob. "New interaction potentials for alkali and alkaline-earth aluminosilicate glasses." The Journal of chemical physics 150, no. 15 (2019): 154505.
+3. For Alkali borate glasses: Sundararaman Siddharth, Liping Huang, Simona Ispas, and Walter Kob. "New interaction potentials for borate glasses with mixed network formers." The Journal of chemical physics 152, no. 10 (2020): 104501.
+4. For Alkaline-earth silicate and borate glasses: Yueh-Ting Shih, Sundararaman Siddharth, Simona Ispas, and Liping Huang. "New interaction potentials for alkaline earth silicate and borate glasses." Journal of non-crystalline solids (Under review).
