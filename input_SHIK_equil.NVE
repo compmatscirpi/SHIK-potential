@@ -1,0 +1,44 @@
+# SHIK Silica Sample Code
+
+units           lj
+atom_style      charge
+
+# 1 is Oxygen
+# 2 is Silicon
+pair_style      shik/wolf 8.0 10.0
+read_data       Silica_input_structure.data
+mass            1 1.0
+mass            2 1.755
+
+replicate       3 3 3
+
+group           go type 1 1
+group           gsi type 2 2
+
+variable       t equal 0.346667
+velocity       all create $t 87287
+#The charge is multiplied by 3.7947 for unit conversion and absorbing the constant 
+set             group go charge -3.36878722700  
+set             group gsi charge 6.737574454  
+
+pair_coeff      1 1 1120.528996 2.892741833 26.13207696 16800.0 0.2 0.2
+pair_coeff      1 2 23107.84764 5.097856735 139.6947857 66.0 0.2 0.2
+pair_coeff      2 2 2797.979165 4.407320018 0.0 3423204.0 0.2 0.2
+
+neighbor        0.3 bin
+neigh_modify    every 1 delay 0 check no
+
+
+thermo          10
+thermo_style    custom step temp ke pe etotal vol press pxx pyy pzz lx ly lz enthalpy
+timestep        0.04
+
+# Binder uses 1.6 fs, that is equivalent to 0.04
+# 0.026 Internal Temperature=300 K
+# 1 Internal Pressure=160 GPa
+
+
+fix            1 all nvt temp 0.346667 0.346667 10
+run            100000
+unfix          1
+
