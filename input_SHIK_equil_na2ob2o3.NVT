@@ -1,0 +1,45 @@
+# SHIK 0.2Na2O-0.8B2O3 Sample Code
+
+units           lj
+atom_style      charge
+
+# 1 is Oxygen
+# 2 is Boron
+# 3 is Sodium
+
+pair_style      shik/wolf 8.0 10.0
+read_data       Borate_input_structure.data
+
+mass            1 1.0
+mass            2 0.676
+mass            3 1.437
+
+group           go type 1 1
+group           gb type 2 2
+group           gna type 3 3
+
+variable       t equal 0.26
+velocity       all create $t 87287
+
+set             group go charge -4.117087927 
+set             group gb charge  6.119348098  
+set             group gna charge 2.283679136  
+
+pair_coeff      1 1 1120.528996 2.892741833 26.13207696 16800.0 0.2 0.2
+pair_coeff      1 2 16182.14122 5.6068912 59.20266682 32.0 0.2 0.2
+pair_coeff      2 2 1805.537033 3.822750437 69.1743994 6000.0 0.2 0.2
+pair_coeff      1 3 1127566 6.8986 40.562 16800.0 0.2 0.2
+pair_coeff      2 3 3148.5 3.6183 34.000 16800.0 0.2 0.2
+pair_coeff      3 3 1476.9 3.4075 0.0 16800.0 0.2 0.2
+
+neighbor        0.3 bin
+neigh_modify    every 1 delay 0 check no
+
+thermo          10
+thermo_style    custom step temp ke pe etotal vol press pxx pyy pzz lx ly lz enthalpy
+timestep        0.04
+
+fix             1 all nvt temp 0.26 0.26 10
+run             100000
+unfix           1
+
