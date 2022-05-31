@@ -12,7 +12,7 @@ Here, you will find the potential files (pair_SHIK_wolf.cpp and pair_SHIK_wolf.h
 Sample input files for running simple MD simulation of different glass system have been included here for reference.
 File "input_SHIK_equil_sio2.NVT" is for silica glass; "input_SHIK_equil_na2osio2.NVT" and "input_SHIK_equil_caoosio2.NVT" are for sodium silicate and calcium silicate respectively; "input_SHIK_equil_na2ob2o3.NVT" and "input_SHIK_equil_caob2o3.NVT" are for sodium borate and calcium borate respectively.
 
-These potential files have been currently tested upto the LAMMPS Mar 2018 package but should work in the current version of LAMMPS too (2020). Potential parameters for the various systems can be found in the references below. If you have any questions, please contact Siddharth Sundararaman at ssundararaman@lbl.gov or siddharth.s410@gmail.com or Yueh-Ting (Tim) Shih at shihy4@rpi.edu.
+These potential files have been currently tested upto the LAMMPS Mar 2018 package but should work in the current version of LAMMPS too (2020). Potential parameters for the various systems can be found in the references below. If you have any questions, please contact Siddharth Sundararaman at ssundararaman@lbl.gov or siddharth.s410@gmail.com or Yueh-Ting (Tim) Shih at ytshih@mail.ntut.edu.tw.
 
 References:
 
