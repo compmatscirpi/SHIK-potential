@@ -14,6 +14,10 @@ File "input_SHIK_equil_sio2.NVT" is for silica glass; "input_SHIK_equil_na2osio2
 
 These potential files have been currently tested upto the LAMMPS Mar 2018 package but should work in the current version of LAMMPS too (2020). Potential parameters for the various systems can be found in the references below. If you have any questions, please contact Siddharth Sundararaman at ssundararaman@lbl.gov or siddharth.s410@gmail.com or Yueh-Ting (Tim) Shih at ytshih@mail.ntut.edu.tw.
 
+Update notes: 
+
+09192022: The file pair_SHIK_wolf_2022 is compatible with the 2022 LAMMPS version 
+
 References:
 
 1. For pure silica glass: Siddharth Sundararaman, Liping Huang, Simona Ispas, and Walter Kob. "New optimization scheme to obtain interaction potentials for oxide glasses." The Journal of Chemical Physics 148, no. 19 (2018): 194504.
