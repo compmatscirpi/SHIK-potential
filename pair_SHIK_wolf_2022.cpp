@@ -79,7 +79,7 @@ PairSHIKWolf::~PairSHIKWolf()
 
 /* ---------------------------------------------------------------------- */
 
-void PairCHIKWolf::compute(int eflag, int vflag)
+void PairSHIKWolf::compute(int eflag, int vflag)
 {
   int i,j,ii,jj,inum,jnum,itype,jtype;
   double qtmp,xtmp,ytmp,ztmp,delx,dely,delz,evdwl,ecoul,fpair;
@@ -191,7 +191,7 @@ void PairCHIKWolf::compute(int eflag, int vflag)
    allocate all arrays
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::allocate()
+void PairSHIKWolf::allocate()
 {
   allocated = 1;
   int n = atom->ntypes;
@@ -223,7 +223,7 @@ void PairCHIKWolf::allocate()
    global settings
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::settings(int narg, char **arg)
+void PairSHIKWolf::settings(int narg, char **arg)
 {
   if (narg < 1 || narg > 2) error->all(FLERR,"Illegal pair_style command");
 
@@ -248,7 +248,7 @@ void PairCHIKWolf::settings(int narg, char **arg)
    set coeffs for one or more type pairs
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::coeff(int narg, char **arg)
+void PairSHIKWolf::coeff(int narg, char **arg)
 {
   if (narg < 8 || narg > 10)  //changed by 3
     error->all(FLERR,"Incorrect args for pair coefficients");
@@ -293,7 +293,7 @@ void PairCHIKWolf::coeff(int narg, char **arg)
    init specific to this pair style
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::init_style()
+void PairSHIKWolf::init_style()
 {
   if (!atom->q_flag)
     error->all(FLERR,"Pair style chik/wolf requires atom attribute q");
@@ -305,7 +305,7 @@ void PairCHIKWolf::init_style()
    init for one type pair i,j and corresponding j,i
 ------------------------------------------------------------------------- */
 
-double PairCHIKWolf::init_one(int i, int j)
+double PairSHIKWolf::init_one(int i, int j)
 {
   if (setflag[i][j] == 0) error->all(FLERR,"All pair coeffs are not set");
 
@@ -365,7 +365,7 @@ double PairCHIKWolf::init_one(int i, int j)
   proc 0 writes to restart file
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::write_restart(FILE *fp)
+void PairSHIKWolf::write_restart(FILE *fp)
 {
   write_restart_settings(fp);
 
@@ -390,7 +390,7 @@ void PairCHIKWolf::write_restart(FILE *fp)
   proc 0 reads from restart file, bcasts
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::read_restart(FILE *fp)
+void PairSHIKWolf::read_restart(FILE *fp)
 {
   read_restart_settings(fp);
 
@@ -429,7 +429,7 @@ void PairCHIKWolf::read_restart(FILE *fp)
   proc 0 writes to restart file
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::write_restart_settings(FILE *fp)
+void PairSHIKWolf::write_restart_settings(FILE *fp)
 {
   fwrite(&cut_lj_global,sizeof(double),1,fp);
   fwrite(&cut_coul_global,sizeof(double),1,fp);
@@ -441,7 +441,7 @@ void PairCHIKWolf::write_restart_settings(FILE *fp)
   proc 0 reads from restart file, bcasts
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::read_restart_settings(FILE *fp)
+void PairSHIKWolf::read_restart_settings(FILE *fp)
 {
   if (comm->me == 0) {
     fread(&cut_lj_global,sizeof(double),1,fp);
@@ -459,7 +459,7 @@ void PairCHIKWolf::read_restart_settings(FILE *fp)
    proc 0 writes to data file
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::write_data(FILE *fp)
+void PairSHIKWolf::write_data(FILE *fp)
 {
   for (int i = 1; i <= atom->ntypes; i++)
     fprintf(fp,"%d %g %g %g %g %g %g\n",i,a[i][i],b[i][i],c[i][i],d[i][i],gammalj[i][i],gammacoul[i][i]);
@@ -469,7 +469,7 @@ void PairCHIKWolf::write_data(FILE *fp)
    proc 0 writes all pairs to data file
 ------------------------------------------------------------------------- */
 
-void PairCHIKWolf::write_data_all(FILE *fp)
+void PairSHIKWolf::write_data_all(FILE *fp)
 {
   for (int i = 1; i <= atom->ntypes; i++)
     for (int j = i; j <= atom->ntypes; j++)
@@ -478,7 +478,7 @@ void PairCHIKWolf::write_data_all(FILE *fp)
 
 /* ---------------------------------------------------------------------- */
 
-double PairCHIKWolf::single(int i, int j, int itype, int jtype,
+double PairSHIKWolf::single(int i, int j, int itype, int jtype,
                                double rsq,
                                double factor_coul, double factor_lj,
                                double &fforce)
