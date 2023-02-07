@@ -17,7 +17,7 @@
 
 /* ----------------------------------------------------------------------
    The buck/coul/cut  potential was used as a template and modified into 
-   the CHIK potential form with a wolf term for long range interactions. 
+   the SHIK potential form with a wolf term for long range interactions. 
    An extra repulsive term has been added to the short range part of the 
    interaction. The long range interaction has been modified to use the 
    wolf method. Both the short range part and long range part have then 
@@ -27,13 +27,13 @@
 ------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------
-   Modifying author: Siddharth Sundararaman (RPI) (CHIK/wolf)
+   Modifying author: Siddharth Sundararaman (RPI) (SHIK/wolf)
 ------------------------------------------------------------------------- */
 
 #include "math.h"
 #include "stdio.h"
 #include "stdlib.h"
-#include "pair_CHIK_wolf.h"
+#include "pair_SHIK_wolf.h"
 #include "atom.h"
 #include "comm.h"
 #include "force.h"
@@ -48,14 +48,14 @@ using namespace MathConst;
 
 /* ---------------------------------------------------------------------- */
 
-PairCHIKWolf::PairCHIKWolf(LAMMPS *lmp) : Pair(lmp)
+PairSHIKWolf::PairSHIKWolf(LAMMPS *lmp) : Pair(lmp)
 {
   writedata = 1;
 }
 
 /* ---------------------------------------------------------------------- */
 
-PairCHIKWolf::~PairCHIKWolf()
+PairSHIKWolf::~PairSHIKWolf()
 {
   if (!copymode) {
     memory->destroy(setflag);
