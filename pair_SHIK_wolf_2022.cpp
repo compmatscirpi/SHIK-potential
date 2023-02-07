@@ -296,7 +296,7 @@ void PairSHIKWolf::coeff(int narg, char **arg)
 void PairSHIKWolf::init_style()
 {
   if (!atom->q_flag)
-    error->all(FLERR,"Pair style chik/wolf requires atom attribute q");
+    error->all(FLERR,"Pair style shik/wolf requires atom attribute q");
 
   neighbor->request(this,instance_me);
 }
@@ -331,7 +331,7 @@ double PairSHIKWolf::init_one(int i, int j)
 
   // compute I,J contribution to long-range tail correction
   // count total # of atoms of type I and J via Allreduce
-  // Tail correction not implemented for CHIK potential implementation yet
+  // Tail correction not implemented for SHIK potential implementation yet
   if (tail_flag) {
     int *type = atom->type;
     int nlocal = atom->nlocal;
