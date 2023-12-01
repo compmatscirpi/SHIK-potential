@@ -17,6 +17,7 @@ These potential files have been currently tested upto the LAMMPS Mar 2018 packag
 Update notes: 
 
 09192022: The file pair_SHIK_wolf_2022 is compatible with the 2022 LAMMPS version 
+
 12012023: The file input_quench is the script for generating the initial atomic configuration of 0.4CaO-0.6SiO2 glass by simulating the melt-quenching process
 
 References:
