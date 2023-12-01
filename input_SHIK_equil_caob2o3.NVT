@@ -8,7 +8,7 @@ atom_style      charge
 # 3 is Calcium
 
 pair_style      shik/wolf 8.0 10.0
-read_data       Borate_input_structure.data
+read_data       CalciumBorate_input_structure.data
 
 mass            1 1.0
 mass            2 0.676
