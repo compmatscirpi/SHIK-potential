@@ -8,7 +8,7 @@ atom_style      charge
 # 3 is Sodium
 
 pair_style      shik/wolf 8.0 10.0
-read_data       Silicate_input_structure.data
+read_data       SoldiumSilicate_input_structure.data
 
 mass            1 1.0
 mass            2 1.755
